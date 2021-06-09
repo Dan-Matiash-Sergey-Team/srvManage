@@ -22,7 +22,7 @@ function parse(data) {
 	let km = data['data']['infoDtp']['km']
 	let m = data['data']['infoDtp']['m']
 	res['street'] = s
-	res['district'] = data['district_name']
+	res['district'] = data['data']['District']
 	if (km != "" && d != "") {
 		add = d + ", " + km + "км" + (m != "0" ? ", " + m + "м" : "")
 	} else if (s != "") {
