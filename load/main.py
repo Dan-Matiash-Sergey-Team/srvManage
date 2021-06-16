@@ -30,6 +30,7 @@ def findDist(dot):
             return(j.split('%')[0])
     return 'NULL'
 
+
 for f in ["45 г. Москва 1-12.2015.json", "45 г. Москва 1-12.2016.json", "45 г. Москва 1-12.2017.json","45 г. Москва 1-12.2018.json", "45 г. Москва 1-12.2019.json", "45 г. Москва 1-12.2020.json", "45 г. Москва 1-4.2021.json"]:
    with open(f, 'r') as file:
        data = json.loads(file.read())

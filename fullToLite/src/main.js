@@ -15,21 +15,10 @@ function parse(data) {
 	res['COORD_W'] = data['data']['infoDtp']['COORD_W']
 	res['COORD_L'] = data['data']['infoDtp']['COORD_L']
 
-	let add = ""
+	let add = data['data']['infoDtp']['address']
 	let s = data['data']['infoDtp']['street']
-	let h = data['data']['infoDtp']['house'].replace(' ', '/')
-	let d = data['data']['infoDtp']['dor']
-	let km = data['data']['infoDtp']['km']
-	let m = data['data']['infoDtp']['m']
 	res['street'] = s
 	res['district'] = data['data']['District']
-	if (km != "" && d != "") {
-		add = d + ", " + km + "км" + (m != "0" ? ", " + m + "м" : "")
-	} else if (s != "") {
-		add = s + ", д " + h
-	} else {
-		add = "Точный адрес происшествия не указан"
-	}
 	res['address'] = add
 
 	for (let ts of data['data']['infoDtp']['ts_info']) {
